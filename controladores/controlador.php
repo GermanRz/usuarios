@@ -28,6 +28,11 @@ class ControladorUsuarios{
         
     } //fin del metodo crear
 
+    public function consultar($id){
+        $this->usuario->set("id",$id);
+        return $this->usuario->consultar();
+    }//fin del metodo consultar
+
 }//fin de la clase ControladorUsuarios
 
 ?>

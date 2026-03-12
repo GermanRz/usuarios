@@ -44,6 +44,23 @@ class Usuarios{
     }//fin del metodo crear
 
 
+    public function consultar(){
+        $sql="SELECT * FROM usuarios WHERE idUsuario = '$this->id'";
+        $resultado=$this->con->consultaRetorno($sql);
+        $registro=mysqli_fetch_assoc($resultado);
+
+        // $this->id=$registro["idUsuario"];
+        // $this->nombres=$registro["nombres"];
+        // $this->apellidos=$registro["apellidos"];
+        // $this->usuario=$registro["usuario"];
+        // $this->password=$registro["password"];
+        // $this->cedula=$registro["cedula"];
+
+        return $registro;       
+
+    }
+
+
 }// Fin de la clase usuarios
 
 // $miUsuario = new Usuarios();
