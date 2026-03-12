@@ -15,6 +15,19 @@ class ControladorUsuarios{
         return $listar;
     }
 
-}
+    public function crear($cedula, $nombre, $apellidos, $usuario, $clave){
+        $this->usuario->set("cedula",$cedula);
+        $this->usuario->set("nombres",$nombre);
+        $this->usuario->set("apellidos",$apellidos);
+        $this->usuario->set("usuario",$usuario);
+        $this->usuario->set("password",$clave);
+
+        $resultado=$this->usuario->crear();
+        return $resultado;
+
+        
+    } //fin del metodo crear
+
+}//fin de la clase ControladorUsuarios
 
 ?>
