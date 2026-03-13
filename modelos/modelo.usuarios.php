@@ -1,7 +1,7 @@
 <?php
 include_once("connection.php");
 
-class Usuarios{
+class ModeloUsuarios{
     /* atributos */
     private $id;
     private $nombres;
@@ -17,17 +17,17 @@ class Usuarios{
         $this->con = new Conexion();
     } // Fin del constructor
 
-    public function listar(){
+    public function mdlListar(){
         $sql = "SELECT * FROM usuarios";
         $resultado = $this->con->consultaRetorno($sql);
         return $resultado;
     }
 
-    public function set($atributo, $valor){
+    public function mdlSet($atributo, $valor){
         $this->$atributo=$valor;
     }
 
-    public function crear(){
+    public function mdlCrear(){
         $sql2="SELECT * FROM usuarios WHERE cedula='$this->cedula'";
         echo $sql2;
         $resultado=$this->con->consultaRetorno($sql2);
@@ -44,7 +44,7 @@ class Usuarios{
     }//fin del metodo crear
 
 
-    public function consultar(){
+    public function mdlConsultar(){
         $sql="SELECT * FROM usuarios WHERE idUsuario = '$this->id'";
         $resultado=$this->con->consultaRetorno($sql);
         $registro=mysqli_fetch_assoc($resultado);
@@ -60,12 +60,12 @@ class Usuarios{
 
     }
 
-    public function eliminar(){
+    public function mdlEliminar(){
         $sql ="DELETE FROM usuarios WHERE idUsuario=$this->id";
         $this->con->consultaSimple($sql);
     }
 
-    public function editar(){
+    public function mdlEditar(){
         $sql="UPDATE usuarios SET   nombres='$this->nombres', 
                                     apellidos='$this->apellidos', 
                                     usuario='$this->usuario', 

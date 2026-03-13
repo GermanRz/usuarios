@@ -1,5 +1,8 @@
 <?php
-    include_once("controladores/controlador.php");
+    include_once("controladores/controlador.usuarios.php");
+    
+    include_once("modelos/modelo.usuarios.php");
+    
     include_once("controladores/enrutador.php");
 ?>
 <!DOCTYPE html>
@@ -27,7 +30,7 @@
         if (!isset($_GET['cargar'])){
             $_GET['cargar']="";
         }
-        
+
         $enrutador = new Enrutador();
         if ($enrutador->validarVista($_GET['cargar'])){
             $enrutador->cargarVista($_GET['cargar']);

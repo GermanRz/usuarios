@@ -1,12 +1,12 @@
 <?php
     $controlador=new ControladorUsuarios();
     if (isset($_GET["id"])){
-        $registro=$controlador->consultar($_GET["id"]);
-        var_dump($registro);
+        $registro=$controlador->ctrConsultar($_GET["id"]);
+        // var_dump($registro);
     }
 
     if (isset($_POST["modificar"])){
-        $controlador->editar($_POST['id'], $_POST['cedula'],$_POST['nombres'],$_POST['apellidos'],$_POST['usuario'],$_POST['password']);
+        $controlador->ctrEditar($_POST['id'], $_POST['cedula'],$_POST['nombres'],$_POST['apellidos'],$_POST['usuario'],$_POST['password']);
         header('Location:index.php');
     }
 
