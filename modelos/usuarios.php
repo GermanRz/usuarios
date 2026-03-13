@@ -60,6 +60,11 @@ class Usuarios{
 
     }
 
+    public function eliminar(){
+        $sql ="DELETE FROM usuarios WHERE idUsuario=$this->id";
+        $this->con->consultaSimple($sql);
+    }
+
 
 }// Fin de la clase usuarios
 

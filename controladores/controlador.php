@@ -33,6 +33,11 @@ class ControladorUsuarios{
         return $this->usuario->consultar();
     }//fin del metodo consultar
 
+    public function eliminar($id){
+        $this->usuario->set("id",$id);
+        $this->usuario->eliminar();
+    }
+
 }//fin de la clase ControladorUsuarios
 
 ?>

@@ -1,20 +1,34 @@
 <h1>Agregar un nuevo Usuario</h1>
 
-<form action="" method="post">
-    <label for="">Cédula</label><br>
-    <input type="text" name="cedula" required><br><br>
-
-    <label for="">Nombres</label><br>
-    <input type="text" name="nombres"  required><br><br>
-    <label for="">Apellidos</label><br>
-    <input type="text" name="apellidos"  required><br><br>
-    <label for="">Usuario</label><br>
-    <input type="text" name="usuario"  required><br><br>
-    <label for="">Clave</label><br>
-    <input type="text" name="password"  required><br><br>
-
-    <input type="submit" name="enviarRegistro"  value="Registrar">
-</form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="" method="post" class="mt-4">
+                <div class="mb-3">
+                    <label for="cedula" class="form-label">Cédula</label>
+                    <input type="text" class="form-control" id="cedula" name="cedula" required>
+                </div>
+                <div class="mb-3">
+                    <label for="nombres" class="form-label">Nombres</label>
+                    <input type="text" class="form-control" id="nombres" name="nombres" required>
+                </div>
+                <div class="mb-3">
+                    <label for="apellidos" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                </div>
+                <div class="mb-3">
+                    <label for="usuario" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="usuario" name="usuario" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Clave</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" name="enviarRegistro" class="btn btn-primary">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>
 <?php
     $controlador=new ControladorUsuarios();
     if (isset($_POST["enviarRegistro"])){
