@@ -65,6 +65,19 @@ class Usuarios{
         $this->con->consultaSimple($sql);
     }
 
+    public function editar(){
+        $sql="UPDATE usuarios SET   nombres='$this->nombres', 
+                                    apellidos='$this->apellidos', 
+                                    usuario='$this->usuario', 
+                                    password='$this->password'  
+                WHERE idUsuario='$this->id'";
+        echo $sql;
+        // exit;
+
+        $this->con->consultaSimple($sql);
+
+    }
+
 
 }// Fin de la clase usuarios
 

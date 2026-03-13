@@ -38,6 +38,20 @@ class ControladorUsuarios{
         $this->usuario->eliminar();
     }
 
+    public function editar($id, $cedula, $nombres, $apellido, $usuario, $clave){
+        
+        $this->usuario->set("id",$id);
+        $this->usuario->set("nombres",$nombres);
+        $this->usuario->set("cedula",$cedula);
+        $this->usuario->set("apellidos",$apellido);
+        $this->usuario->set("usuario",$usuario);
+        $this->usuario->set("password",$clave);
+
+        $this->usuario->editar();
+
+
+    }//fin del metodo editar
+
 }//fin de la clase ControladorUsuarios
 
 ?>
